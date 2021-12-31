@@ -1,0 +1,32 @@
+import pandas as pd
+import smtplib
+from email.message import EmailMessage 
+from getpass import getpass
+sender_email = input("enter the email address")
+sender_password = getpass("enter the password")
+df = pd.read_excel("persondetails.xlsx")
+reciever_mail = df["email id"].values
+sub = ("check mail")
+attach_file = df["files"]
+name = df["name"].values
+
+
+
+zippvalue = zip[reciever_mail,attach_file,name]
+for(a,b,c) in zippvalue:
+    message = emailmessage()
+    files = [(r"gokul.pdf".format(b))]
+    for i in files:
+        with open (file,'rb') as f:
+            file_read = f.read()
+            file_name = f.name()
+        message['from']= sender_email
+        message['to'] = a
+        message['sub'] = sub
+        message.set_content(f"hello{c}! wishing you happy diwali,")
+        
+        
+    with smtplip.SMTP_SSL('smpt.gmail.com',465) as smtp:
+        smtp.login(sender_email,sender_password)
+        smtp.send_message(message)
+    print("mail too be send all")
