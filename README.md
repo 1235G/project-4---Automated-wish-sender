@@ -1,4 +1,4 @@
-# automated-wiz-sender
+# automated-wish-sender
 
 overview:
 
